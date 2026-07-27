@@ -295,7 +295,7 @@ class SmartPaymentMatchCustomer(models.Model):
                 customer=self.partner_id.display_name,
             ),
             "res_model": "account.move.line",
-            "view_mode": "list,form",
+            "view_mode": "tree,form",
             "domain": [("id", "in", credit_lines.ids)],
             "context": {"create": False},
         }
@@ -307,7 +307,7 @@ class SmartPaymentMatchCustomer(models.Model):
             "type": "ir.actions.act_window",
             "name": _("Open Invoices - %(customer)s", customer=self.partner_id.display_name),
             "res_model": "account.move",
-            "view_mode": "list,form",
+            "view_mode": "tree,form",
             "domain": [("id", "in", invoice_lines.move_id.ids)],
             "context": {"create": False, "default_move_type": "out_invoice"},
         }

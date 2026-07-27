@@ -37,7 +37,7 @@ class ResConfigSettings(models.TransientModel):
             "type": "ir.actions.act_window",
             "name": _("Manual Payment Matching"),
             "res_model": "smart.payment.match.customer",
-            "view_mode": "list",
+            "view_mode": "tree",
             "view_id": self.env.ref(
                 "smart_payment_allocation.view_smart_payment_match_customer_list"
             ).id,

@@ -35,7 +35,7 @@
                     <field name="result_note" nolabel="1"/>
                 </div>
                 <field name="line_ids" nolabel="1">
-                    <list create="0" delete="0" editable="bottom" decoration-success="selected">
+                    <tree create="0" delete="0" editable="bottom" decoration-success="selected">
                         <field name="sequence" widget="handle"/>
                         <field name="selected"/>
                         <field name="invoice_id"/>
@@ -48,7 +48,7 @@
                         <field name="suggested_amount"/>
                         <field name="confidence"/>
                         <field name="match_reason"/>
-                    </list>
+                    </tree>
                 </field>
                 <footer>
                     <button name="action_suggest" string="Suggest" type="object" class="btn-primary" icon="fa-magic"/>

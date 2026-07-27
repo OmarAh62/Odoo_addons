@@ -136,7 +136,7 @@ class AccountPayment(models.Model):
             "type": "ir.actions.act_window",
             "name": _("Outstanding Invoices - %(customer)s", customer=self.partner_id.display_name),
             "res_model": "account.move",
-            "view_mode": "list,form",
+            "view_mode": "tree,form",
             "domain": self._get_customer_open_invoice_domain(),
             "context": {
                 "default_move_type": "out_invoice",

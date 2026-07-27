@@ -1,4 +1,15 @@
-# Smart Payment Allocation for Odoo 18
+# Smart Payment Allocation for Odoo 17
+
+> Ported from the Odoo 18.0.1.10.2 codebase. `<list>` view tags and
+> `view_mode`/`view_id` values were converted back to the Odoo 17 `<tree>`
+> convention (the tree→list rename only happened in Odoo 18). No other API
+> changes were required for the fields/methods this module uses
+> (`account_type`, `parent_state`, `invisible="condition"` syntax, and the
+> `block`/`setting` settings layout are all already valid in 17). Please test
+> against a real Odoo 17 instance before deploying, in particular the
+> `res_config_settings` xpath target `pay_invoice_online_setting_container`,
+> since third-party core view anchor points can shift between versions.
+
 
 Version 18.0.1.9.0.
 
