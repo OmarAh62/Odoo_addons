@@ -6,6 +6,8 @@
     "author": "Omar Ahmed",
     "website": "",
     "license": "LGPL-3",
+    "price": 79.00,
+    "currency": "USD",
     "depends": ["account"],
     "data": [
         "security/ir.model.access.csv",
