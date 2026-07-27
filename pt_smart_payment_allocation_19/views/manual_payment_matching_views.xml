@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_smart_payment_match_customer_list" model="ir.ui.view">
+        <field name="name">smart.payment.match.customer.list</field>
+        <field name="model">smart.payment.match.customer</field>
+        <field name="arch" type="xml">
+            <list string="Manual Payment Matching"
+                  create="0"
+                  edit="0"
+                  delete="0"
+                  default_order="open_payment_amount desc">
+                <header>
+                    <button name="action_match_selected_customers"
+                            type="object"
+                            string="Match Selected Customers"
+                            class="btn-primary"
+                            icon="fa-link"
+                            display="always"/>
+                </header>
+                <field name="partner_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="currency_id" column_invisible="True"/>
+                <button name="action_open_customer_payments"
+                        type="object"
+                        icon="fa-money"
+                        title="Open unmatched payments, customer credits, and credit notes/returns"/>
+                <field name="open_payment_count" sum="Total Payments/Credits/Returns"/>
+                <field name="open_payment_amount" sum="Total Unmatched Payments/Credits/Returns"/>
+                <button name="action_open_customer_invoices"
+                        type="object"
+                        icon="fa-file-text-o"
+                        title="Open outstanding invoices"/>
+                <field name="open_invoice_count" sum="Total Invoices"/>
+                <field name="open_invoice_amount" sum="Total Open Debt"/>
+                <field name="matchable_amount" sum="Total Matchable Amount"/>
+                <button name="action_match_customer"
+                        type="object"
+                        string="Match"
+                        class="btn-success"
+                        icon="fa-link"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_smart_payment_match_customer_search" model="ir.ui.view">
+        <field name="name">smart.payment.match.customer.search</field>
+        <field name="model">smart.payment.match.customer</field>
+        <field name="arch" type="xml">
+            <search string="Manual Payment Matching">
+                <field name="partner_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_customer"
+                            string="Customer"
+                            context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_by_company"
+                            string="Company"
+                            context="{'group_by': 'company_id'}"
+                            groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_smart_payment_match_customer" model="ir.actions.act_window">
+        <field name="name">Manual Payment Matching</field>
+        <field name="res_model">smart.payment.match.customer</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_smart_payment_match_customer_list"/>
+        <field name="search_view_id" ref="view_smart_payment_match_customer_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No customers currently have both unmatched payments/customer credits/returns and open invoices.
+            </p>
+            <p>
+                Select one or more customers and click Match Selected Customers. Payments, customer credits, and posted credit notes/returns are consumed from oldest to newest and applied to the oldest due invoices. Partial matching is supported.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_smart_payment_match_customer"
+              name="Manual Payment Matching"
+              parent="account.menu_finance_receivables"
+              action="action_smart_payment_match_customer"
+              sequence="16"
+              groups="account.group_account_user"/>
+</odoo>
