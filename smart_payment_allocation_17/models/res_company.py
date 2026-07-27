@@ -75,7 +75,7 @@ class ResCompany(models.Model):
 
     def _smart_existing_parameter_key(self, setting_name):
         self.ensure_one()
-        return "pt_smart_payment_allocation.%s.company_%s" % (setting_name, self.id)
+        return "smart_payment_allocation.%s.company_%s" % (setting_name, self.id)
 
     def _compute_smart_match_existing_records(self):
         parameters = self.env["ir.config_parameter"].sudo()
