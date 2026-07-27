@@ -1,7 +1,7 @@
 {
     "name": "Smart Payment Allocation",
     "summary": "Suggest and automate customer payment matching against open invoices",
-    "version": "18.0.1.10.2",
+    "version": "19.0.1.10.2",
     "category": "Accounting/Accounting",
     "author": "Omar Ahmed",
     "website": "",

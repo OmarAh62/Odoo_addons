@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_smart_payment_allocation_wizard,smart.payment.allocation.wizard,model_smart_payment_allocation_wizard,account.group_account_user,1,1,1,1
-access_smart_payment_allocation_wizard_line,smart.payment.allocation.wizard.line,model_smart_payment_allocation_wizard_line,account.group_account_user,1,1,1,1
-access_smart_payment_match_customer,smart.payment.match.customer,model_smart_payment_match_customer,account.group_account_user,1,1,0,0

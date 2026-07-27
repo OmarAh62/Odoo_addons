@@ -1,4 +1,14 @@
-# Smart Payment Allocation for Odoo 18
+# Smart Payment Allocation for Odoo 19
+
+> Ported from the Odoo 18.0.1.10.2 codebase. Odoo 19 keeps the `<list>` tag
+> and view_mode syntax introduced in 18, so no view-tag changes were needed.
+> No code differences were applied beyond the manifest version bump, since
+> nothing in this module touches the accounting/inventory internal API
+> signatures or ORM method names that changed in 19. Please test against a
+> real Odoo 19 instance before deploying to confirm the core `account`
+> module's `view_account_payment_tree`/`res_config_settings_view_form` anchor
+> IDs used by this module's inherited views haven't been renamed.
+
 
 Version 18.0.1.9.0.
 
