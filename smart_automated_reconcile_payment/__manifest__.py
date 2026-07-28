@@ -1,5 +1,5 @@
 {
-    "name": "Smart Payment Allocation",
+    "name": "Smart Automated Reconcile Payment",
     "summary": "Suggest and automate customer payment matching against open invoices",
     "version": "18.0.1.10.2",
     "category": "Accounting/Accounting",
