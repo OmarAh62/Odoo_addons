@@ -1,6 +1,6 @@
 {
     "name": "Smart Automated Reconcile Payment",
-    "summary": "Suggest and automate customer payment matching against open invoices",
+    "summary": "Smart automatic reconciliation for old and manually entered invoices, with live customer balance shown during payment",
     "version": "17.0.1.10.2",
     "category": "Accounting/Accounting",
     "author": "Omar Ahmed",
