@@ -39,10 +39,10 @@ class ResConfigSettings(models.TransientModel):
             "res_model": "smart.payment.match.customer",
             "view_mode": "tree",
             "view_id": self.env.ref(
-                "smart_payment_allocation.view_smart_payment_match_customer_list"
+                "smart_automated_reconcile_payment.view_smart_payment_match_customer_list"
             ).id,
             "search_view_id": self.env.ref(
-                "smart_payment_allocation.view_smart_payment_match_customer_search"
+                "smart_automated_reconcile_payment.view_smart_payment_match_customer_search"
             ).id,
             "context": {},
         }
